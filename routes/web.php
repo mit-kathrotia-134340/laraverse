@@ -3,6 +3,7 @@
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FollowerController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\TweetController;
 use App\Http\Controllers\UserController;
 use GuzzleHttp\Promise\Create;
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [TweetController::class, 'index'])->name('home');
 
 // User Login Page
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
 
 // User Registration Page
 Route::get('/register', [UserController::class, 'create']);
@@ -39,18 +40,21 @@ Route::post('/logout', [UserController::class, 'logout']);
 // ---------------------------------------------------------------------- //
 
 // Tweet Store
-Route::post('tweets/store', [TweetController::class, 'store']);
+Route::middleware('auth')->post('tweets/store', [TweetController::class, 'store']);
 
 // Tweet Delete
 Route::middleware('auth')->delete('tweets/delete/{id}', [TweetController::class, 'destroy']);
 
 // Explore Page
-Route::get('/explore', [TweetController::class, 'explore'])->name('explore');
+Route::middleware('auth')->get('/explore', [TweetController::class, 'explore'])->name('explore');
 
 // Following Page
-Route::get('/followings', [TweetController::class, 'followings'])->name('followings');
+Route::middleware('auth')->get('/followings', [TweetController::class, 'followings'])->name('followings');
 
-Route::get('/followers', [TweetController::class, 'followers'])->name('followers');
+Route::middleware('auth')->get('/followers', [TweetController::class, 'followers'])->name('followers');
+
+Route::middleware('auth')->get('/notifications', [NotificationController::class, 'index'])->name('notifications');
+
 
 
 

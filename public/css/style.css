@@ -405,3 +405,22 @@ input[type="submit"].inkit-button {
     border: none;
     color: rgb(188, 173, 219);
 }
+
+.notif {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: #FCF6F5FF;
+    margin: 1vh;
+    color: #435E55FF;
+    border-radius: 2vh;
+}
+
+.notif-profile {
+    height: 5vh;
+    width: 5vh;
+    margin-top: 0.5vh;
+}
+
+.notif-tag {
+    margin-top: 1vh;
+}

@@ -34,4 +34,5 @@ class Tweet extends Model
         return Like::where('tweet_id',$this->id)->where('user_id',$user->id)->get();
     }
 
+
 }

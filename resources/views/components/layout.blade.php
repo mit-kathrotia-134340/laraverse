@@ -20,7 +20,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" class="text-decoration-none">
+                        <a href="{{route('notifications')}}" class="text-decoration-none">
                             <i class="fa fa-bell" aria-hidden="true"></i>
                             Notification
                         </a>

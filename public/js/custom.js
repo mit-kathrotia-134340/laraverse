@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    // document.location.reload(true);
     var $repliesWindow = $('div.reply-window');
     var $commentsWindow = $('div.comment-window');
 
