@@ -31,15 +31,6 @@
                             Profile
                         </a>
                     </li>
-                @else
-                    <li>
-                        <a href="" class="text-decoration-none">
-                            <i class="fa fa-hashtag" aria-hidden="true"></i>
-
-                            Explore
-                        </a>
-                    </li>
-
                 @endauth
             </ul>
             @auth
